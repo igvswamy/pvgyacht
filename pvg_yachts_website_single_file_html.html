@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PVG Yachts — Primein Ventures Global</title>
+  <style>
+    :root{--accent:#0b74ff;--dark:#0b1b2b;--muted:#6b7280;--card:#ffffff;--glass:rgba(255,255,255,0.06)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,#f7fbff, #eef6ff);color:var(--dark)}
+    header{background:linear-gradient(90deg,var(--accent),#00a3ff);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600}
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .hero{display:flex;gap:24px;align-items:center}
+    .hero-left{flex:1}
+    .hero-right{width:420px;background:white;padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(11,23,43,0.08)}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+    .section{margin-top:28px}
+    .models{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(11,23,43,0.06)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .grid-2{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+    .small{font-size:13px;color:var(--muted)}
+    form label{display:block;margin-top:10px;font-weight:600}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf7;margin-top:6px}
+    .muted{color:var(--muted);font-size:13px}
+    footer{padding:18px 24px;background:#fff;margin-top:36px;border-top:1px solid #eef2f7}
+    .flex{display:flex;gap:12px;align-items:center}
+    .mini{font-size:13px;color:var(--muted)}
+    /* responsive */
+    @media(max-width:920px){.models{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+    @media(max-width:560px){.models{grid-template-columns:1fr}.hero{flex-direction:column}.hero-right{width:100%}}
+    /* subtle table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid #f1f5f9;text-align:left}
+    .muted-2{color:#9aa6b2}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:#f1f7ff;color:var(--accent);font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">PVG</div>
+      <div>
+        <div style="font-weight:800">PRIMEIN VENTURES GLOBAL (P) LTD</div>
+        <div style="font-size:13px;opacity:.9">PVG Yachts — Chennai Luxury Yacht Rentals</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#models">Yacht Models</a>
+      <a href="#booking">Book</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#manage">Manage Booking</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Luxury Yacht Rentals in Chennai — PVG Yachts</h1>
+        <p class="lead">Private cruises · Corporate events · Fishing & parties · Sunset rides. Book instantly, pay securely, and set sail from Chennai Marina.</p>
+        <div style="margin-top:12px">
+          <a class="btn" href="#booking">Book Now</a>
+          <a style="margin-left:10px" href="#contact" class="mini">WhatsApp: +91 7299982022</a>
+        </div>
+
+        <div class="section">
+          <h3>Why PVG Yachts?</h3>
+          <ul>
+            <li class="small">Fleet of modern, safety-certified yachts with experienced crew</li>
+            <li class="small">Transparent pricing, instant booking & secure payments</li>
+            <li class="small">Flexible time slots, add-on services (food, DJ, fishing gear)</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div><strong>Quick Book</strong><div class="muted small">Fill basic details and get instant estimate</div></div>
+          <div class="tag">Instant</div>
+        </div>
+
+        <form id="quickBook">
+          <label>Choose Yacht Model</label>
+          <select id="qb_model">
+            <option value="classic-30">Classic 30ft — Up to 8 pax</option>
+            <option value="lux-45">Luxury 45ft — Up to 20 pax</option>
+            <option value="party-70">Party 70ft — Up to 50 pax</option>
+          </select>
+
+          <label>Date</label>
+          <input type="date" id="qb_date">
+
+          <label>Time Slot</label>
+          <select id="qb_slot">
+            <option>09:00 - 11:00</option>
+            <option>12:00 - 15:00</option>
+            <option>16:00 - 19:00</option>
+            <option>19:00 - 22:00</option>
+          </select>
+
+          <label>No. of Pax</label>
+          <input type="number" id="qb_pax" min="1" max="200" value="4">
+
+          <label>Payment Mode</label>
+          <select id="qb_payment">
+            <option>UPI (50% advance)</option>
+            <option>Card / Netbanking (50% advance)</option>
+            <option>Cash on Boarding (100% on board)</option>
+          </select>
+
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <button class="btn" type="button" onclick="makeQuickBooking()">Get Estimate & Book</button>
+            <a class="mini" href="#pricing">View Pricing</a>
+          </div>
+        </form>
+
+        <div id="qb_result" style="margin-top:12px;display:none"></div>
+      </aside>
+    </section>
+
+    <section id="models" class="section">
+      <h2>Yacht Models</h2>
+      <div class="models">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80" alt="Classic 30ft">
+          <h3>Classic 30ft</h3>
+          <div class="small">Ideal for small families or fishing trips — capacity up to 8 pax.</div>
+          <div style="margin-top:8px;font-weight:700">Starting ₹6,500 / hour</div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1519885271130-5d9b0e8f1a8b?w=1200&q=80" alt="Luxury 45ft">
+          <h3>Luxury 45ft</h3>
+          <div class="small">Comfortable seating, restroom, mini-bar — capacity up to 20 pax.</div>
+          <div style="margin-top:8px;font-weight:700">Starting ₹18,000 / hour</div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80" alt="Party 70ft">
+          <h3>Party 70ft</h3>
+          <div class="small">Large deck, sound system, perfect for events — capacity up to 50 pax.</div>
+          <div style="margin-top:8px;font-weight:700">Starting ₹45,000 / hour</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2>Pricing & Packages</h2>
+      <p class="muted">Transparent pricing — hourly rates shown. Add-on services billed extra.</p>
+      <table>
+        <thead><tr><th>Model</th><th>Hourly Rate (₹)</th><th>Capacity</th><th>Advance</th></tr></thead>
+        <tbody>
+          <tr><td>Classic 30ft</td><td>6,500</td><td>Up to 8</td><td>₹1,500 (deposit)</td></tr>
+          <tr><td>Luxury 45ft</td><td>18,000</td><td>Up to 20</td><td>₹6,000 (deposit)</td></tr>
+          <tr><td>Party 70ft</td><td>45,000</td><td>Up to 50</td><td>₹15,000 (deposit)</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:12px">
+        <strong>Add-ons</strong>
+        <ul class="small">
+          <li>Food & Beverage packages (catering on request)</li>
+          <li>DJ / Sound system</li>
+          <li>Fishing gear</li>
+          <li>Decorations / Event setup</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="booking" class="section">
+      <h2>Book Your Yacht</h2>
+      <div class="grid-2">
+        <div class="card">
+          <form id="bookForm" onsubmit="return handleBooking(event)">
+            <label>Yacht Model</label>
+            <select name="model" required>
+              <option value="classic-30">Classic 30ft</option>
+              <option value="lux-45">Luxury 45ft</option>
+              <option value="party-70">Party 70ft</option>
+            </select>
+
+            <label>Date</label>
+            <input type="date" name="date" required>
+
+            <label>Time Slot</label>
+            <select name="slot" required>
+              <option>09:00 - 11:00</option>
+              <option>12:00 - 15:00</option>
+              <option>16:00 - 19:00</option>
+              <option>19:00 - 22:00</option>
+            </select>
+
+            <label>No. of Pax</label>
+            <input type="number" name="pax" min="1" max="200" value="4" required>
+
+            <label>Duration (hours)</label>
+            <input type="number" name="hours" min="1" value="2" required>
+
+            <label>Contact Name</label>
+            <input type="text" name="name" required>
+
+            <label>Contact Phone</label>
+            <input type="tel" name="phone" required>
+
+            <label>Contact Email</label>
+            <input type="email" name="email">
+
+            <label>Payment Mode</label>
+            <select name="payment">
+              <option>UPI (50% advance)</option>
+              <option>Card / Netbanking (50% advance)</option>
+              <option>Cash on Boarding (100% on board)</option>
+            </select>
+
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+              <button class="btn" type="submit">Confirm Booking</button>
+              <button type="button" onclick="estimatePrice()" class="mini">Estimate Price</button>
+            </div>
+          </form>
+
+          <div id="estimate" style="margin-top:10px;display:none"></div>
+        </div>
+
+        <aside class="card">
+          <h3>Manage / Modify / Cancel</h3>
+          <p class="small">Enter Booking ID and email to view, modify, or cancel an existing booking.</p>
+          <label>Booking ID</label>
+          <input id="manage_id">
+          <label>Email</label>
+          <input id="manage_email">
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <button class="btn" onclick="fetchBooking()">Fetch Booking</button>
+            <button class="mini" onclick="showModify()">Modify</button>
+            <button class="mini" onclick="cancelBooking()">Cancel</button>
+          </div>
+          <div id="manage_result" style="margin-top:10px"></div>
+
+          <hr style="margin:12px 0">
+          <h4>Important</h4>
+          <p class="mini">Advance payment of 50% required to confirm most bookings. Cancellation policy: Full refund if canceled 7+ days before; 50% refund if canceled 48–7 hours before; no refund for <48 hours (customizable).</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <div class="card">
+        <h4>How early should I book?</h4>
+        <p class="small">We recommend booking at least 48 hours in advance for weekend slots. For large events, 2–4 weeks is ideal.</p>
+        <h4>What is included?</h4>
+        <p class="small">Crew, fuel for booked duration, basic safety gear. Food, DJ, and special services are extra.</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=60" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=60" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1519885271130-5d9b0e8f1a8b?w=800&q=60" style="width:100%;height:140px;object-fit:cover;border-radius:8px">
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact & Booking Support</h2>
+      <div class="card">
+        <div class="flex" style="justify-content:space-between">
+          <div>
+            <div style="font-weight:800">PVG Yachts — Primein Ventures Global (P) Ltd</div>
+            <div class="mini">Marina, Chennai • GST: 33XXXXXXXXX</div>
+            <div class="mini">Phone: +91 7299982022 • Email: support@pvg-yachts.example</div>
+            <div class="mini">WhatsApp: <a href="https://wa.me/917299982022" target="_blank">+91 7299982022</a></div>
+          </div>
+          <div style="max-width:360px">
+            <strong>Quick message</strong>
+            <form onsubmit="return sendMessage(event)">
+              <label>Name</label>
+              <input name="msg_name" required>
+              <label>Phone</label>
+              <input name="msg_phone" required>
+              <label>Message</label>
+              <input name="msg_text" required>
+              <div style="margin-top:8px"><button class="btn">Send</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>PVG Yachts</strong>
+        <div class="mini">Luxury Yacht Rentals • Chennai Marina • © PVG 2025</div>
+      </div>
+      <div class="mini">Terms • Privacy • Cancellation Policy</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple client-side booking storage (demo). Replace with backend API for production.
+    function uid(){return 'PVG'+Math.random().toString(36).slice(2,9).toUpperCase()}
+
+    function priceFor(model){
+      if(model==='classic-30') return 6500;
+      if(model==='lux-45') return 18000;
+      if(model==='party-70') return 45000;
+      return 10000;
+    }
+
+    function estimatePrice(){
+      const f=document.forms.bookForm;
+      const model=f.model.value; const hours=Number(f.hours.value||2);
+      const base=priceFor(model)*hours; const gst=Math.round(base*0.18);
+      const total=base+gst;
+      document.getElementById('estimate').style.display='block';
+      document.getElementById('estimate').innerHTML=`<div><strong>Estimate:</strong> ₹${base} + GST ₹${gst} = <strong>₹${total}</strong></div>`;
+    }
+
+    function handleBooking(e){
+      e.preventDefault();
+      const fd=new FormData(e.target);
+      const booking={
+        id:uid(), model:fd.get('model'), date:fd.get('date'), slot:fd.get('slot'), pax:fd.get('pax'), hours:fd.get('hours'),
+        name:fd.get('name'), phone:fd.get('phone'), email:fd.get('email'), payment:fd.get('payment'), created:Date.now()
+      };
+      const base=priceFor(booking.model)*Number(booking.hours);
+      booking.amount=base+Math.round(base*0.18);
+      // store in localStorage (demo)
+      const all=JSON.parse(localStorage.getItem('pvg_bookings')||'[]'); all.push(booking); localStorage.setItem('pvg_bookings',JSON.stringify(all));
+      alert('Booking created — ID: '+booking.id+'\nAdvance required: Please pay 50% to confirm (check Payment instructions).');
+      // show booking summary
+      const summary=`Booking confirmed. ID: ${booking.id}\nModel: ${booking.model}\nDate: ${booking.date} ${booking.slot}\nPax: ${booking.pax}\nTotal: ₹${booking.amount}`;
+      document.getElementById('estimate').style.display='block'; document.getElementById('estimate').textContent=summary;
+      e.target.reset();
+      return false;
+    }
+
+    function makeQuickBooking(){
+      const model=document.getElementById('qb_model').value;
+      const date=document.getElementById('qb_date').value; const slot=document.getElementById('qb_slot').value;
+      const pax=document.getElementById('qb_pax').value; const payment=document.getElementById('qb_payment').value;
+      const hours=2; const base=priceFor(model)*hours; const gst=Math.round(base*0.18); const tot=base+gst;
+      const el=document.getElementById('qb_result'); el.style.display='block'; el.innerHTML=`Estimate for ${model}: ₹${base} + GST ₹${gst} = <strong>₹${tot}</strong><div style=\"margin-top:8px\"><button class=\"btn\" onclick=\"location.href='#booking'\">Proceed to Full Booking</button></div>`;
+    }
+
+    function fetchBooking(){
+      const id=document.getElementById('manage_id').value.trim(); const email=document.getElementById('manage_email').value.trim();
+      const all=JSON.parse(localStorage.getItem('pvg_bookings')||'[]');
+      const b=all.find(x=>x.id===id && (!email || x.email===email));
+      const el=document.getElementById('manage_result'); if(!b){el.innerText='No booking found.';return}
+      el.innerText=`ID: ${b.id}\nModel: ${b.model}\nDate: ${b.date} ${b.slot}\nPax: ${b.pax}\nContact: ${b.name} • ${b.phone}\nTotal: ₹${b.amount}`;
+    }
+
+    function showModify(){
+      alert('To modify a booking: fetch it first, then contact support@pvg-yachts.example or call +91 7299982022. This demo requires a backend to allow online modify.');
+    }
+
+    function cancelBooking(){
+      const id=document.getElementById('manage_id').value.trim(); const all=JSON.parse(localStorage.getItem('pvg_bookings')||'[]');
+      const idx=all.findIndex(x=>x.id===id); if(idx===-1){alert('Booking not found');return}
+      if(!confirm('Are you sure you want to cancel booking '+id+' ? Cancellation policy will apply.')) return;
+      all.splice(idx,1); localStorage.setItem('pvg_bookings',JSON.stringify(all)); alert('Booking canceled. Refunds processed as per policy.'); document.getElementById('manage_result').innerText='Booking canceled.';
+    }
+
+    function sendMessage(e){e.preventDefault(); alert('Message sent to support (demo). Our team will contact you.'); e.target.reset();}
+  </script>
+</body>
+</html>
